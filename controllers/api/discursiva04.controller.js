@@ -18,13 +18,17 @@ function executaIteratividade(m, n){
 function iterativa(req, res) {
    var m = parseInt(req.query.m);
    var n = parseInt(req.query.n);
-   var retorno = executaIteratividade(m, n);
-   res.send(
-      {
-         tipo: "iterativa",
-         resultado: retorno
-      }
-   );
+   if ((m <= n)&& (m>0)) {
+      var retorno = executaIteratividade(m, n);
+      res.send(
+         {
+            tipo: "iterativa",
+            resultado: retorno
+         }
+      );
+   }
+   else
+      res.status(500).send('Dados inválidos');
 }
 
 function executaRecursividade(m, n) {
@@ -37,11 +41,15 @@ function executaRecursividade(m, n) {
 function recursiva(req, res) {
    var m = parseInt(req.query.m);
    var n = parseInt(req.query.n);
-   var retorno = executaRecursividade(m, n);
-   res.send(
-      {
-         tipo: "recursiva",
-         resultado: retorno
-      }
-   );
+   if ((m <= n)&& (m>0)) {
+      var retorno = executaRecursividade(m, n);
+      res.send(
+         {
+            tipo: "recursiva",
+            resultado: retorno
+         }
+      );
+   }
+   else
+      res.status(500).send('Dados inválidos');
 }
