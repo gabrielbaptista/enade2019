@@ -27,3 +27,8 @@ var serverAPI = api.listen(apiPort, function () {
 });
 
 console.log('Application started');
+
+// Para testar:
+// ../api/discursiva04/iterativa?m=1&n=4
+// ../api/discursiva04/recursiva?m=1&n=4
+// ../api/about
